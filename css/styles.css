@@ -25,14 +25,16 @@ button {
 
   display: flex;
   align-items: center;
+  justify-content: space-around;
 
   opacity: 0.3;
   transition: opacity 0.5s;
 
-  width: 50px;
-  height: 400px;
+  width: 400px;
+  height: 50px;
 
   cursor: pointer;
+  list-style: none;
 }
 
 .colors__block:hover {
@@ -90,4 +92,13 @@ button {
 
 .color:nth-child(10) {
   background-color: #ffffff;
+}
+
+.buttons__block {
+  position: fixed;
+  top: 0;
+  left: 15%;
+  display: flex;
+
+  transform: translateX(-50%);
 }

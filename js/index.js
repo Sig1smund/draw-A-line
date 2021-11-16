@@ -2,7 +2,7 @@ const canvas = document.getElementById("blank");
 canvas.height = window.innerHeight;
 canvas.width = window.innerWidth;
 
-const colors = document.querySelectorAll(".color");
+let colors = document.querySelectorAll(".color");
 colors = Array.from(colors);
 
 const context = canvas.getContext("2d");
@@ -39,19 +39,20 @@ window.addEventListener("mouseup", (event) => (doIt = false));
 
 window.addEventListener("mousemove", (event) => {
   if (previousX == null || previousY == null || !doIt) {
-    previousY = event.clientY;
     previousX = event.clientX;
+    previousY = event.clientY;
     return;
   }
 
-  let currentY = event.clientY;
   let currentX = event.clientX;
+  let currentY = event.clientY;
 
   context.beginPath();
-  context.moveTo(previousY, previousX);
+  context.moveTo(previousX, previousY);
   context.lineTo(currentX, currentY);
   context.stroke();
 
   previousY = currentY;
   previousX = currentX;
+  console.log(event);
 });
