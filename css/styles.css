@@ -19,8 +19,8 @@ button {
 
 .colors__block {
   position: fixed;
-  left: 0;
-  top: 50%;
+  left: 50%;
+  top: 0;
   transform: translateX(-50%);
 
   display: flex;
